@@ -35,9 +35,8 @@ class screen:
     scr = screen.scr
     for i in range(3):
         for j in range(3):
-            sqr = square.square(0, boardnum, (j*3)+i, pygame.Rect(x + 63*i, y + 63*j, 58, 58))
+            sqr = square.square(0, boardnum, (j*3)+i, pygame.Rect(x + 63*i + 2, y + 63*j + 1, 58, 58))
             brd.position[boardnum][(j*3)+i] = sqr
-            pygame.draw.rect(scr, (255, 255, 255), sqr.rectangle)
     screen.scr = scr
     pygame.display.update()
 
@@ -62,7 +61,7 @@ class screen:
     o_image_fs = pygame.image.load("ttt_o.png")
     o_image = pygame.transform.scale(o_image_fs, (220, 220))
 
-    brdrectangle = pygame.Rect(boardNum % 3 * 243 + 10, boardNum//3 * 243 + 17, 120, 120)
+    brdrectangle = pygame.Rect(boardNum % 3 * 243 + 9, boardNum//3 * 243 + 14, 120, 120)
 
     if letter == 'WX':
       scr.blit(x_image, brdrectangle)
@@ -72,7 +71,16 @@ class screen:
     screen.scr = scr
     pygame.display.update()
 
+#   def drawYellowRectangle(self, legalBoards):
+#     theScr = pygame.display.set_mode((729, 729))
+#     yellow_image_fs = pygame.image.load("ttt_rectangle.png")
+#     yellow_image = pygame.transform.scale(yellow_image_fs, (220,220))
+
+#     for i in range (len(legalBoards)):
+#         yellow_rectangle = pygame.Rect(legalBoards[i] % 3 * 243 + 9, legalBoards[i]//3 * 243 + 14, 120, 120)
+#         theScr.blit(yellow_image, yellow_rectangle)
+
+
+#     pygame.display.update()
+
     
-
-
-            

@@ -105,3 +105,14 @@ class board:
                     returnList[i].append(0)
         self.evalBoard = evaluatedPosition.evaluatedPosition(returnList, None, turn, currentMove, self.boardStatus)
         return returnList
+
+
+    # def legalBoards(self, boardPos):
+    #     legalBoards = []
+    #     if self.boardStatus[boardPos] == 0:
+    #         legalBoards.append(boardPos)
+    #     else:
+    #         for i in range(9):
+    #             if self.boardStatus[i] == 0 and i != boardPos:
+    #                 legalBoards.append(i)
+    #     return legalBoards

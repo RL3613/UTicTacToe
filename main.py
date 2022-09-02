@@ -19,7 +19,6 @@ while running:
               theRect = brd.position[i][j].rectangle
               if theRect.collidepoint(pygame.mouse.get_pos()):
                 if brd.userInput(i, j, turn, prevMove, myscreen) == True:
-                  print(i, j)
                   if turn == 'X':
                     turn = 'O'
                   else:
@@ -28,6 +27,7 @@ while running:
                   if (brd.checkBigBoard() == 'WX') or (brd.checkBigBoard() == 'WO') or (brd.checkBigBoard() == 'D'):
                     print("Someone on or the game was drawn")
                     turn = 'E'
+                  myscreen.drawYellowRectangle(brd.legalBoards(j))
                 else:
                   print(brd.userInput(i, j, turn, prevMove, myscreen))
                   print("Invalid move. Try again.")
